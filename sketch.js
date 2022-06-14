@@ -13,10 +13,10 @@ let fake_min;
 
 
 function setup() {
-  createCanvas(600, 600);
-  r1=150;
-  r2=50;
-  r3=20;
+  createCanvas(windowWidth, windowHeight);
+  r1=width/4;
+  r2=width/12;
+  r3=width/30;
   coeff=0.8;
   fake_hour=9;
   fake_min=28;
@@ -86,3 +86,6 @@ function keyPressed() {
   }
 }
   
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);    
+}
