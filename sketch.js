@@ -14,9 +14,9 @@ let fake_min;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  r1=width/4;
-  r2=width/12;
-  r3=width/30;
+  r1=windowWidth/8;
+  r2=windowWidth/16;
+  r3=windowWidth/40;
   coeff=0.8;
   fake_hour=9;
   fake_min=28;
@@ -32,14 +32,14 @@ function update(){
 function draw() {
   if (frameCount==1){
     fill(0);
-    rect(0,0,width,height);
+    rect(0,0,windowWidth,height);
   }  
 
   noStroke();
   fill(0,0,0,5);
   
-  rect(0,0,width,height);
-  translate(width/2,height/2);
+  rect(0,0,windowWidth,height);
+  translate(windowWidth/2,height/2);
   for(let i=0; i<200;i++){
       pos_x=r1*cos(theta)+(r2+r3*coeff)*cos(phi);
       pos_y=r1*sin(theta)+(r2+r3*coeff)*sin(phi);
@@ -57,32 +57,32 @@ function keyPressed() {
     theta_step=-PI/2000*fake_hour;
     phi_step=-PI/2000*fake_min;
     fill(0);
-    translate(-width/2,-height/2);
-    rect(0,0,width,height);
+    translate(-windowWidth/2,-height/2);
+    rect(0,0,windowWidth,height);
   } 
   if (key ==='s') {
     fake_hour -=1;
     theta_step=-PI/200*fake_hour;
     phi_step=-PI/2000*fake_min;
     fill(0);
-    translate(-width/2,-height/2);
-    rect(0,0,width,height);
+    translate(-windowWidth/2,-height/2);
+    rect(0,0,windowWidth,height);
   }
   if (key ==='a') {
     fake_min -=1;
     theta_step=-PI/2000*fake_hour;
     phi_step=-PI/2000*fake_min;
     fill(0);
-    translate(-width/2,-height/2);
-    rect(0,0,width,height);
+    translate(-windowWidth/2,-height/2);
+    rect(0,0,windowWidth,height);
   }
   if (key ==='d') {
     fake_min +=1;
     theta_step=-PI/2000*fake_hour;
     phi_step=-PI/2000*fake_min;
     fill(0);
-    translate(-width/2,-height/2);
-    rect(0,0,width,height);
+    translate(-windowWidth/2,-height/2);
+    rect(0,0,windowWidth,height);
   }
 }
   
